@@ -7,7 +7,7 @@ You need Grunt and all its dependencies. You can find installation guide on http
 CoffeeToGo's dependencies can be installed with command
 
 ```sh
-$ grunt install
+$ npm install
 ```
 
 ## Usage
