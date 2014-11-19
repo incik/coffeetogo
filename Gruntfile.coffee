@@ -35,19 +35,10 @@ module.exports = (grunt) ->
 
     clean: ['<%= distdir %>/*']
 
-    uglify:
-      vendor:
-        files:
-          'app/assets/js/vender.js': 'app/assets/js/vender.js'
-
-      product:
-        files:
-          'www/assets/js/main.js': 'src/dest/main.js'
-
     watch:
       coffee:
-        files: ["src/*.coffee"]
-        tasks: ["coffee:product", "concat:product", "uglify:product"]
+        files: ["src/*.coffee", 'test/unit/*.coffee']
+        tasks: ["coffee", "karma:unit", "build"]
 
 
   grunt.loadNpmTasks "grunt-contrib-coffee"
@@ -63,4 +54,4 @@ module.exports = (grunt) ->
 
   grunt.registerTask "default", ["coffee", 'karma:unit', 'build']
   grunt.registerTask 'build', ['clean','concat']
-  grunt.registerTask 'release', ['coffee', 'clean','uglify','karma:unit','concat:index', 'copy:assets']
+  grunt.registerTask 'release', ['coffee','clean','karma:unit','concat:index']
