@@ -10,6 +10,8 @@ CoffeeToGo's dependencies can be installed with command
 $ npm install
 ```
 
+For testing you will also need [PhantomJS](https://github.com/ariya/phantomjs).
+
 ## Usage
 By default source codes and test are placed in **src** and **test** directory respectively.
 
